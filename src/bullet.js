@@ -11,9 +11,6 @@ function Bullet( yAngle ) {
 Bullet.prototype = {
     constructor: Bullet,
     update: function( dt ) {
-        if ( !dt ) {
-            this.Sphere_update.call( this );
-        }
         this.move( new Vector3( [ -this.velocity * Math.sin( this.yAngle ), 0, -this.velocity * Math.cos( this.yAngle ) ] ) );
     }
 };

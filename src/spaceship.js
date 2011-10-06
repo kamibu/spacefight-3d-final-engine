@@ -34,10 +34,6 @@ Spaceship.prototype = {
         this.targetRoll = roll;
     },
     update: function( dt ) {
-        if ( !dt ) {
-            return this.Node_update.call( this );
-        }
-    
         this.yAngle += this.targetRoll / 4500;
         
         var targetOrientation = new Quaternion().setEuler( this.yAngle, 0, this.targetRoll );
