@@ -27,6 +27,10 @@ app.input.onKey( 'SPACE', function() {
     spaceship.shoot();
 } );
 
+app.input.onKey( 'ENTER', function() {
+    spaceship.reset();
+} );
+
 app.importer.load( 'spaceship.obj', function( model ) {
     model.rotate( new Vector3( [ 1, 0, 0 ] ), -Math.PI / 2 ); // fix orientation
     spaceship.appendChild( model );

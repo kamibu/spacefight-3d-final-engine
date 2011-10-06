@@ -10,6 +10,13 @@ function Spaceship( modelfile, importer ) {
 
 Spaceship.prototype = {
     constructor: Spaceship,
+    reset: function() {
+        this.setPosition( new Vector3( [ 0, 0, 0 ] ) );
+        this.setOrientation( new Quaternion( [ 0, 0, 0, 1 ] ) );
+
+        this.targetRoll = 0;
+        this.yAngle = 0;
+    },
     shoot: function() {
         var leftBullet = new Bullet( this.yAngle );
         leftBullet.setPosition( new Vector3( [ -3, 0, 0 ] ) );
