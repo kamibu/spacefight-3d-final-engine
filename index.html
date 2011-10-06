@@ -6,10 +6,68 @@
                 margin: 0;
                 padding: 0;
                 border: 0;
+                color: white;
+            }
+
+            div.hud {
+                position: absolute;
+                bottom: 10px;
+                left: 2px;
+                color: #333;
+            }
+
+            div.hud img.icon {
+            }
+
+            div.hud a {
+                color: white;
+            }
+
+            div.hud a:visited {
+                color: white;
+            }
+
+            span.hudpart {
+                font-size: 80%;
+                color: white;
+                opacity: 0.5;
+                /* border-left: 1px solid white; */
+                padding-left: 3px;
+            }
+            
+            span.hudlink {
+                border-left: 0px solid white;
+            }
+
+            span.hudlink:hover {
+                opacity: 1;
+            }
+
+            #arrowkeys {
+                width: 24px;
+                height: 15px;
+                position: relative;
+                top: 3px;
+            }
+
+            div.key {
+                background-color: #ccc;
+                box-shadow: 0 0 5px black;
+                display: inline;
+                font-size: 7pt;
+                padding: 0px 7px;
+                border-radius: 3px;
+                color: black;
             }
         </style>
     </head>
     <body>
+        <div class="hud">
+            <span class="hudpart hudlink"><a href="http://github.com/kamibu/spacefight-3d-final-engine/">Spacefight 3D</a></span>
+            <span class="hudpart">rotate <img class="icon" id="arrowkeys" src="resources/icons/arrows.png" /></span>
+            <span class="hudpart">fire <div id="spacekey" class="key">Space</div></span>
+            <span class="hudpart">reset <div class="key">Enter &#8617;</div></span>
+        </div>
         <script type="text/javascript" src="libs/final-engine-debug.js"></script>
         <script type="text/javascript" src="src/spaceship.js"></script>
         <script type="text/javascript" src="src/bullet.js"></script>
