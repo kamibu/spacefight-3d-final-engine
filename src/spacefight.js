@@ -27,6 +27,9 @@ app.input.onKey( 'ENTER', function() {
 
 app.importer.load( 'spaceship.obj', function( model ) {
     model.rotate( new Vector3( [ 1, 0, 0 ] ), -Math.PI / 2 ); // fix orientation
+    // Spaceship has the logic (transformations, shooting etc).
+    // We can attach a 3D model to it as a child in the scene
+    // and the transformations of the spaceship "logic" will be applied to the 3D model.
     spaceship.appendChild( model );
 } );
 
