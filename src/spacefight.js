@@ -5,22 +5,16 @@ app.camera.setPosition( new Vector3( [ 0, 5, 20 ] ) );
 var spaceship = new Spaceship();
 app.scene.appendChild( spaceship );
 
-app.input.onKey( 'RIGHT_ARROW',{
-    callback: function() {
-        spaceship.targetRoll = -45;
-    },
-    endCallback: function() {
-        spaceship.targetRoll = 0; 
-    }
+app.input.onKey( 'RIGHT_ARROW', function() {
+    spaceship.rollTo( -45 );
 } );
 
-app.input.onKey( 'LEFT_ARROW', {
-    callback: function() {
-        spaceship.targetRoll = 45;
-    },
-    endCallback: function() {
-        spaceship.targetRoll = 0;
-    }
+app.input.onKey( 'LEFT_ARROW', function() {
+    spaceship.rollTo( 45 );
+} );
+
+app.input.onKeyUp( [ 'RIGHT_ARROW', 'LEFT_ARROW' ], function() {
+    spaceship.rollTo( 0 );
 } );
 
 app.input.onKey( 'SPACE', function() {

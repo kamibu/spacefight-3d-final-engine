@@ -30,6 +30,9 @@ Spaceship.prototype = {
         this.parent.appendChild( rightBullet );
         this.bullets.push( rightBullet );
     },
+    rollTo: function( roll ) {
+        this.targetRoll = roll;
+    },
     update: function( dt ) {
         if ( !dt ) {
             return this.Node_update.call( this );
