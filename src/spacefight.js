@@ -32,6 +32,11 @@ app.importer.load( 'spaceship.obj', function( model ) {
     spaceship.appendChild( model );
 } );
 
+app.ui.attachCSS( "src/hud/hud.css" );
+app.ui.loadHTML( "src/hud/hud.html", function( hudElement ) {
+    document.body.appendChild( hudElement );
+} );
+
 app.update = function( dt ) {
     spaceship.update( dt );
 };
