@@ -6,6 +6,11 @@ function Spaceship( modelfile, importer ) {
 
     this.targetRoll = 0;
     this.yaw = 0;
+
+    this.shootingSound = null;
+
+    this.soundSource = new SoundSource();
+    this.appendChild( this.soundSource );
 }
 
 Spaceship.prototype = {
@@ -16,6 +21,9 @@ Spaceship.prototype = {
 
         this.targetRoll = 0;
         this.yaw = 0;
+    },
+    setShootingSound: function( asset ) {
+        this.shootingSound = asset;
     },
     shoot: function() {
         var leftBullet = new Bullet( this.yaw );
@@ -29,6 +37,10 @@ Spaceship.prototype = {
         rightBullet.combineWith( this );
         this.parent.appendChild( rightBullet );
         this.bullets.push( rightBullet );
+
+        if ( this.shootingSound ) {
+            this.soundSource.play( this.shootingSound );
+        }
     },
     rollTo: function( roll ) {
         this.targetRoll = roll;

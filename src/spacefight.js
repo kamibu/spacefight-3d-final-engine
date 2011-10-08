@@ -33,6 +33,10 @@ app.importer.load( 'spaceship.obj', function( model ) {
     spaceship.appendChild( model );
 } );
 
+app.importer.load( 'sounds/bullet.mp3', function( shootingSound ) {
+    spaceship.setShootingSound( shootingSound );
+} );
+
 app.ui.attachCSS( "src/hud/hud.css" );
 app.ui.loadHTML( "src/hud/hud.html", function( hudElement ) {
     document.body.appendChild( hudElement );
